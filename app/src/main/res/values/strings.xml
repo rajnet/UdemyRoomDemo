@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">UdemyRoomDemo</string>
+    <string name="subscriber_s_name">Subscriber\'s name</string>
+    <string name="subscriber_s_email">Subscriber\'s email</string>
+    <string name="save">Save</string>
+    <string name="clear_all">Clear All</string>
+    <string name="delete">Delete</string>
+    <string name="update">Update</string>
+</resources>

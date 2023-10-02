@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="subscriberViewModel"
+            type="com.comprehensivetutorial.udemyroomdemo.SubscribersViewModel" />
+    </data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <EditText
+        android:id="@+id/subNameInput"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:fontFamily="sans-serif-condensed"
+        android:hint="@string/subscriber_s_name"
+        android:text="@={subscriberViewModel.inputName}"
+        android:inputType="text"
+        android:singleLine="true"
+        android:textSize="20sp"
+        android:typeface="normal" />
+
+    <EditText
+        android:id="@+id/subEmailInput"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:fontFamily="sans-serif-condensed"
+        android:hint="@string/subscriber_s_email"
+        android:text="@={subscriberViewModel.inputEmail}"
+        android:inputType="textEmailAddress"
+        android:singleLine="true"
+        android:textSize="20sp"
+        android:typeface="normal"
+        android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/saveOrUpdateBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@={subscriberViewModel.saveOrUpdateBtnText}"
+            android:onClick="@{() -> subscriberViewModel.onSaveOrUpdate()}"
+            android:contentDescription="Save or Delete button"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/clearAllOrDeleteBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@={subscriberViewModel.clearAllOrDeleteBtnText}"
+            android:onClick="@{() -> subscriberViewModel.onClearAllOrDelete()}"
+            android:contentDescription="Clear All Or Delete"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:id="@+id/subscribersListView"/>
+</LinearLayout>
+</layout>
